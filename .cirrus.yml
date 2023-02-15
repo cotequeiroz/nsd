@@ -97,6 +97,11 @@ task:
   matrix:
     - name: "Build and test on Ubuntu 22.04 LTS with GCC 11"
       <<: *ubuntu_2204_gcc11
+    - name: "Build and test on Ubuntu 22.04 LTS with GCC 11 (ssl=no, libevent=no)"
+      <<: *ubuntu_2204_gcc11
+      env:
+        OPENSSL: "no"
+        LIBEVENT: "no"
     - name: "Build and test on Ubuntu 22.04 LTS with Clang 14 (ASan+UBSan+LSan)"
       <<: *ubuntu_2204_clang14
       env:
